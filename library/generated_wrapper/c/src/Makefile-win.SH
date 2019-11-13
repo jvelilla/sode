@@ -4,7 +4,7 @@ OUTDIR= .
 INDIR= .
 CC = $cc
 OUTPUT_CMD = $output_cmd
-CFLAGS = -I"$rt_include" -I $(TOP)$(DIR)include -I $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)sode$(DIR)c$(DIR)include -I $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)C$(DIR)include
+CFLAGS = -I"$rt_include" -I $(TOP)$(DIR)include -I $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)generated_wrapper$(DIR)c$(DIR)include -I $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)C$(DIR)include
 JCFLAGS = $(CFLAGS) $optimize $ccflags
 JMTCFLAGS = $(CFLAGS) $optimize $mtccflags
 JILCFLAGS = $(CFLAGS) $optimize $mtccflags  -DEIF_IL_DLL
@@ -13,7 +13,7 @@ MV = $mv
 RM = $del
 MAKE = $make
 MKDIR = $mkdir
-OBJECTS = ewg_unknown_callback_c_glue_code.$obj
+OBJECTS = ewg_libsod_callback_c_glue_code.$obj
 
 .c.$obj:
 	$(CC) -c $(JCFLAGS) $<
@@ -21,13 +21,13 @@ OBJECTS = ewg_unknown_callback_c_glue_code.$obj
 all:: standard
 	$(MAKE) clean
 
-standard:: eif_unknown.lib
+standard:: eif_libsod.lib
 
 clean:
 	$(RM) *.$obj
 	$(RM) *.lib
 
-eif_unknown.lib: $(OBJECTS)
+eif_libsod.lib: $(OBJECTS)
 	$alib_line
 	$(MKDIR) $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)C$(DIR)spec$(DIR)$(ISE_C_COMPILER)$(DIR)$(ISE_PLATFORM)$(DIR)lib
 	$(MV) $@ $(TOP)$(DIR)$(TOP)$(DIR)$(TOP)$(DIR)C$(DIR)spec$(DIR)$(ISE_C_COMPILER)$(DIR)$(ISE_PLATFORM)$(DIR)lib$(DIR)$@

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ewg_config name="libsod">
+
+  <rule_list>
+
+		
+    <!-- Ignore everything that starts with an underscore. -->
+    <rule>
+      <match>
+        	<identifier name="_.*"/>	
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+    <!-- The next rule specify what headers should be wrapped -->
+    <rule>
+      <match>
+            <!--header name=".*common.h"/-->
+	         <identifier name="sod_.*"/>
+	    </match>
+       <wrapper type="default">
+      </wrapper>
+    </rule>
+
+
+    <!-- And the rest should be ignored -->
+    <rule>
+      <match>
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+  </rule_list>
+
+</ewg_config>
