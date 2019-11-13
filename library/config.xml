@@ -23,6 +23,18 @@
       </wrapper>
     </rule>
 
+    <!-- The next rule wrapp callbacks -->
+    <rule>
+      <match>
+            <!--header name=".*common.h"/-->
+           <identifier name="Proc.*"/>
+      </match>
+       <wrapper type="default">
+      </wrapper>
+    </rule>
+
+
+
 
     <!-- And the rest should be ignored -->
     <rule>
