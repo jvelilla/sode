@@ -24,7 +24,7 @@
 				<platform value="windows"/>
 			</condition>
 		</external_object>
-		<external_object location="$ECF_CONFIG_PATH/C/spec/$ISE_C_COMPILER/$ISE_PLATFORM/lib/eif_libsod.lib">
+		<external_object location="$ECF_CONFIG_PATH/C/spec/$ISE_C_COMPILER/$ISE_PLATFORM/lib/eif_libsode.lib">
 			<condition>
 				<platform value="windows"/>
 			</condition>

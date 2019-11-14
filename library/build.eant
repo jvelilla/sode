@@ -12,7 +12,7 @@
 
 
   <description>
-    description: "Eiffel Libgit2 Library"
+    description: "Eiffel LibSode Library"
   </description>
 
   <target name="help">
@@ -28,7 +28,7 @@
 
   <target name="init_wrap_c">
     <set name="system_dir" value="${cwd}"/>
-    <set name="wrap_c.library_name" value="libffi"/>
+    <set name="wrap_c.library_name" value="libsode"/>
     <set name="wrap_c.full_header_name" value="${cwd}${path_separator}C${path_separator}include${path_separator}sod.h"/>
     <set name="wrap_c.use_config_file" value="True"/>
     <set name="wrap_c.verbose" value="--verbose"/>
@@ -68,7 +68,7 @@
 
 
   <target name="clean">
-    <echo message="- Clean [Eiffel Libffi]" />
+    <echo message="- Clean [Eiffel Libsode]" />
     <delete directory="C/spec/${ISE_PLATFORM}" unless="${is_windows}"/>
     <delete directory="C\spec\${ISE_C_COMPILER}\${ISE_PLATFORM}" if="${is_windows}" />
     <delete directory="generated_wrapper"/>
